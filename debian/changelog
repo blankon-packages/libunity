@@ -1,0 +1,11 @@
+libunity (6.12.0-1~experimental1blankon1) tambora; urgency=medium
+
+  * Upload to BlankOn 
+
+ -- Rahman Yusri Aftian <aftian@di.blankon.in>  Thu, 07 Jul 2016 22:10:30 +0700
+
+libunity (6.12.0-1~experimental1) experimental; urgency=low
+
+  * Initial release (Closes: #751720)
+
+ -- Sergey "Shnatsel" Davidoff <sergey@elementaryos.org>  Mon, 28 Jul 2014 02:27:01 +0400

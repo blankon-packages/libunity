@@ -1,0 +1,2 @@
+usr/lib/*/libunity*.so.*
+usr/share/glib-2.0/schemas/com.canonical.Unity.Lenses.gschema.xml

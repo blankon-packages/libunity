@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@ --with python2,quilt --parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-headless-tests
+
+override_dh_install:
+	rm debian/tmp/usr/lib/*/*.*a
+	rm debian/tmp/usr/lib/*/libunity/*.*a
+	rm debian/tmp/usr/lib/python*/dist-packages/gi/overrides/*.pyc
+	rm debian/tmp/usr/lib/python*/dist-packages/gi/overrides/*.pyo
+	dh_install --fail-missing
+
+override_dh_gencontrol:
+	dh_girepository
+	dh_gencontrol
+
+override_dh_makeshlibs:
+	dh_makeshlibs -plibunity-protocol-private0 -V
+	dh_makeshlibs --remaining-packages
+
+override_dh_auto_test:
